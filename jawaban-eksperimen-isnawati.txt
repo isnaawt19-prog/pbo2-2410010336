@@ -1,0 +1,81 @@
+PRAKTIKUM 6 - EKSPERIMEN
+Nama     : Isnawati
+NPM      : 2410010336
+Prodi    : Teknik Informatika
+
+1. Eksperimen Membuat Objek Koleksi
+
+Perubahan kode:
+Koleksi x = new Koleksi("X01", "Uji", 2026);
+
+Hasil:
+Terjadi error pada saat kompilasi.
+
+Penyebab:
+Kelas Koleksi merupakan abstract class sehingga tidak dapat dibuat objek
+secara langsung menggunakan new. Objek harus dibuat menggunakan class
+turunannya seperti Buku atau Majalah.
+
+Kesimpulan:
+Abstract class tidak dapat diinstansiasi secara langsung.
+
+
+2. Eksperimen Mengubah hitungDenda Menjadi hitungdenda
+
+Perubahan kode:
+Method hitungDenda pada class Buku diubah menjadi hitungdenda.
+
+Hasil jika @Override masih digunakan:
+Terjadi error pada kompiler karena method hitungdenda tidak sama dengan
+method pada class induk. Java bersifat case-sensitive sehingga
+hitungDenda dan hitungdenda dianggap berbeda.
+
+Hasil jika @Override dihapus:
+Program dapat dikompilasi dan method hitungdenda dianggap sebagai method
+baru, bukan method overriding.
+
+Kesimpulan:
+Anotasi @Override membantu memastikan bahwa method benar-benar melakukan
+overriding terhadap method pada class induk.
+
+
+3. Eksperimen Menambahkan Buku dengan Judul Kosong
+
+Perubahan kode:
+new Buku("B009", "", 2020, "Anonim");
+
+Hasil:
+Jika pada constructor Buku terdapat validasi judul kosong, program akan
+menghasilkan error atau exception karena judul tidak boleh kosong.
+Jika tidak terdapat validasi, program tetap berjalan dan buku B009 akan
+memiliki judul kosong.
+
+Kesimpulan:
+Validasi diperlukan untuk memastikan data objek yang dimasukkan sesuai
+dengan aturan yang ditentukan.
+
+
+4. Eksperimen Mengubah Status Menjadi Public
+
+Perubahan:
+private StatusKoleksi status;
+
+diubah menjadi:
+
+public StatusKoleksi status;
+
+Kemudian status B002 yang sedang dipinjam diubah langsung menjadi
+TERSEDIA dari method main.
+
+Hasil:
+Status B002 dapat diubah secara langsung dari luar class walaupun buku
+masih sedang dipinjam.
+
+Aturan yang dilanggar:
+Hal tersebut melanggar prinsip enkapsulasi karena atribut status yang
+seharusnya dilindungi dapat diakses dan diubah secara langsung dari luar
+class.
+
+Kesimpulan:
+Atribut status sebaiknya tetap private agar perubahan status hanya dapat
+dilakukan melalui method yang sudah disediakan oleh class.
