@@ -63,7 +63,7 @@ public static void main(String[] args) {
             + perpus.jumlahTersedia()
             + " dari "
             + perpus.getDaftarKoleksi().size());
-}
+} 
 private static void tampilkanDaftar(Perpustakaan perpus) {
 System.out.println("=== Daftar Koleksi ===");
 for (Koleksi k : perpus.getDaftarKoleksi()) {
