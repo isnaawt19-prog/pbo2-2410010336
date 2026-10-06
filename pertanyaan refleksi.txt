@@ -1,0 +1,21 @@
+1. Apa perbedaan top-level container, intermediate container, dan atomic component? Berikan masing-masing satu contoh.
+
+Top-level container adalah wadah utama yang menjadi jendela aplikasi. Contoh: `JFrame`.
+Intermediate container adalah wadah di dalam top-level container yang digunakan untuk mengelompokkan komponen. Contoh: `JPanel`.
+Atomic component adalah komponen yang langsung digunakan untuk menerima input atau menampilkan informasi. Contoh: `JButton`.
+
+2. Mengapa kedua JRadioButton perlu diberi properti buttonGroup yang sama?
+
+Karena `JRadioButton` yang berada dalam `ButtonGroup` yang sama hanya dapat memilih **satu pilihan** pada satu waktu. Misalnya, jika memilih Ekonomi, maka Bisnis atau Eksekutif akan otomatis tidak terpilih.
+
+3. Kapan Anda memilih JComboBox dibandingkan JRadioButton?
+
+`JComboBox` dipilih jika pilihan yang tersedia **cukup banyak** atau ingin menghemat ruang pada form. Sedangkan `JRadioButton` lebih cocok jika pilihan **sedikit** dan ingin semua pilihan terlihat langsung.
+
+4. Mengapa kode di dalam initComponents() tidak boleh diedit langsung, dan di mana kode tambahan seharusnya ditulis?
+
+Karena `initComponents()` dibuat dan dikelola otomatis oleh **NetBeans GUI Builder**. Jika diedit langsung, perubahan dapat tertimpa ketika form didesain ulang. Kode tambahan seperti logika program, event tombol, dan pengaturan komponen sebaiknya ditulis **di luar `initComponents()`**, misalnya di constructor setelah `initComponents()` atau pada method event masing-masing.
+
+5. Mengapa FlatLightLaf.setup() harus dipanggil sebelum form dibuat?
+
+Karena `FlatLightLaf.setup()` mengatur tampilan dan tema komponen Swing sebelum komponen form dibuat. Dengan begitu, komponen seperti tombol, text field, dan panel langsung menggunakan **tema FlatLaf** saat form ditampilkan.
